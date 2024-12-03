@@ -1,0 +1,601 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E7E2FF;
+    transition: opacity 0.2s ease-in-out;
+}
+
+nav {
+    background: #1a1a1a;
+    width: 100%;
+    padding: 10px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #ffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #6654F1;
+}
+
+.user-pic {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%; 
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 0; 
+    width: 320px;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.5s ease; 
+    z-index: 1000;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 500px; 
+}
+
+.sub-menu {
+    background: #ffff;
+    padding: 20px;
+    margin: 10px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info h3 {
+    font-weight: 500;
+    margin-left: 10px; 
+}
+
+.user-info img {
+    width: 60px;
+    height: 50px;
+    border-radius: 50%; 
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 15px 0;
+}
+
+.sub-menu-link i {
+    margin-right: 10px; 
+}
+
+.sub-menu-link .arrow {
+    margin-left: auto; 
+    font-size: 16px; 
+    color: #ccc; 
+    transition: color 0.3s ease;
+}
+
+.sub-menu-link:hover .arrow {
+    color: #525252; 
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600; 
+}
+
+/* END HEADER */
+
+/* MAIN BANNER */
+
+.artist-banner {
+    display: flex; 
+    width: 90%; 
+    height: 55vh; 
+    overflow: hidden; 
+    position: relative; 
+    margin: 0 auto; 
+    margin-top: 15px; 
+    border-radius: 15px;
+}
+
+.slideshow-container {
+    position: relative;
+    flex: 1; 
+}
+
+.mySlides {
+    display: none; 
+    height: 100%; 
+    width: 100%; 
+    position: relative; 
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    filter: brightness(70%); 
+    object-fit: fill;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 30px;
+    left: 15px;
+    text-align: left;
+    z-index: 10;
+    padding: 20px;
+    border-radius: 8px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* BANNER TEXT */
+
+.banner-text h1 {
+    font-family: 'DK Longreach', sans-serif;
+    font-size: 65px;
+    color: #807EBF;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    margin: 0; 
+}
+
+.banner-text p {
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    margin-left: 10px;
+    line-height: 1.4; 
+}
+
+/* BANNER TEXT END */
+
+.dot-container {
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    gap: 10px; 
+}
+
+.dot {
+    height: 12px; 
+    width: 12px; 
+    background-color: #bbb; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.dot.active {
+    background-color: #6654F1; 
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px 5%;
+}
+
+/* MAIN BANNER END */
+
+/* Layout for About the Event and Featured Artists sections */
+.main-sections {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto; 
+    width: 90%; 
+    gap: 20px; 
+}
+
+.about-event {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-event h2 {
+    margin-bottom: 15px;
+}
+
+.featured-artists {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.featured-artists h2 {
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab-button {
+    padding: 10px 20px; 
+    cursor: pointer;
+    border: none;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s; 
+    margin-bottom: 10px;
+}
+
+.tab-button:hover {
+    background-color: #6654F1; 
+    color: white;
+    transform: scale(1.05); 
+}
+
+.tab-button.active {
+    background-color: #6654F1;
+    color: white;
+}
+
+.tab-content {
+    display: none; 
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.artist-card {
+    display: flex;
+    align-items: flex-start; 
+    text-align: left; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: #f9f9f9;
+    padding-top: 1px;
+    padding-left: 1px;
+    padding-bottom: 1px;
+    margin-top: 20px;
+}
+
+.artist-image-container {
+    position: relative;
+}
+
+.artist-image {
+    width: 300px; 
+    height: 300px;
+    border-radius: 10px;
+    border: 3px solid #6654F1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.artist-name {
+    position: absolute; 
+    top: 10px; 
+    left: 10px;
+    color: #ffffff;
+    background-color: rgba(102, 84, 241, 0.7);
+    padding: 5px; 
+    border-radius: 5px; 
+}
+
+.artist-info p {
+    flex-direction: row;
+}
+
+.artist-info {
+    text-align: justify;
+    justify-content: flex-start;
+    height: 300px; 
+    padding-left: 20px; 
+}
+
+.artist-info h3 {
+    color: #6654F1; 
+    font-size: 24px; 
+    font-weight: bolder; 
+    margin-top: 7px;
+    margin-bottom: 5px; 
+}
+
+.artist-description {
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.showcase-and-discography {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    width: 75%;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-container h2 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+video {
+    width: 100%;
+    height: 700px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.discography-container {
+    width: 25%;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.discography-container h2 {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.album-display {
+    margin-bottom: 5px;
+}
+
+.album-image {
+    width: 380px;
+    height: 250px;
+    object-fit: fill;
+    border-radius: 5px;
+}
+
+.album-name {
+    font-size: 23px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.release-date {
+    color: #6654F1;
+    text-align: left;
+    font-weight: bolder;
+}
+
+.gap {
+    margin-bottom: 20px;
+}
+
+.event-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.event-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.ticket-section {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 75%;
+    border-radius: 10px;
+    height: 560px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-section h2 {
+    text-align: left;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.ticket-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.ticket-map img {
+    width: 600px;
+    height: 75%;
+    border-radius: 10px;
+}
+
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 12px;
+}
+
+.ticket-info h3 {
+    margin-top: 10px;
+}
+
+.ticket-links {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.ticket-button {
+    background-color: #6654F1;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 16px;
+    width: 100%;
+    max-width: 630px;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.ticket-button:hover {
+    transform: scale(1.04);
+}
+
+.ticket-button:active {
+    transform: scale(0.95);
+}
+
+.ticket-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 84, 241, 0.5);
+}
+
+.ticket-pricing {
+    margin-top: 10px;
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.ticket-pricing li {
+    font-weight: 600;
+    background-color: #f9f9f9;
+    color: black;
+    list-style: none;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ticket-pricing li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    background-color: #6654F1;
+    color: white;
+}
+
+.ticket-pricing h3 {
+    grid-column: span 2;
+    text-align: center;
+    color: #6654F1;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.event-location {
+    background-color: #f9f9f9;
+    padding: 15px;
+    width: 25%;
+    height: 560px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-location img {
+    width: 390px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.event-location h2 {
+    color: black;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.event-location h3 {
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.event-location p strong {
+    font-weight: bold;
+    color: #6654F1;
+    font-size: 16px;
+}
+
+.event-location p {
+    font-size: 15px;
+    text-align: left;
+    color: black;
+    line-height: 1.5;
+    margin: 18px 0;
+}
+
+a {
+    text-decoration: none;
+}
